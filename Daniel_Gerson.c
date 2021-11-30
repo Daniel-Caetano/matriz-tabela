@@ -1,11 +1,7 @@
-
-/* Goiania, 30 de novembro de 2021
-
-   Matriz Dados Usuarios
-
-   Devs: Daniel Caetano
-         Gerson Otavio
-*/
+// Autores: Daniel Caetano de Souza Ferreira
+//          Gerson Otávio Fernandes Moreira
+// Data: 30 de novembro de 2021
+// Manipulacao de tabela para busca, atualizacao e preenchimento
 
 // bibliotecas
 #include "Daniel_Gerson.h"
@@ -62,6 +58,7 @@ void preencher_matriz() {
     scanf(" %[^\n]", matrizPreencher[i][4]);
     printf("\n----------------------------------------");
   }
+  system("cls || clear");
   imprimirMatriz();
 }
 
@@ -77,6 +74,8 @@ void busca() {
   if (!segunda) {
     segunda = 1;
 
+    system("cls || clear");
+    imprimirMatriz();
     printf("Digite um telefone para busca!\n");
     // foi usado " %[^\n]" para que o programa considerasse o espaco digitado
     // pelo usuario
@@ -94,6 +93,7 @@ void busca() {
   }
 
   if (preenchida) {
+    system("cls || clear");
     printf("\n_________________________________________________________________"
            "____________________________________________\n");
     printf("|        Nome        ||      Endereco      ||    Codigo Postal   "
@@ -128,6 +128,7 @@ void busca() {
 
   } else if (!preenchida) {
 
+    system("cls || clear");
     printf("\n_________________________________________________________________"
            "____________________________________________\n");
     printf("|        Nome        ||      Endereco      ||    Codigo Postal   "
@@ -161,7 +162,6 @@ void busca() {
   }
 }
 void imprimirMatriz() {
-  // system("cls || Clear");
 
   printf(
       "\n____________________________________________________________________"
@@ -222,6 +222,7 @@ void atualiza() {
   } else if (!preenchida) {
     scanf(" %[^\n]", matrizPreencher[i - 1][cond - 1]);
   }
+  system("cls || clear");
   imprimirMatriz();
 }
 int main() {
@@ -242,11 +243,13 @@ int main() {
     switch (indice) {
     case 1:
       preenchida = 1;
+      system("cls || clear");
       imprimirMatriz();
       break;
 
     case 2:
       preenchida = 0;
+      system("cls || clear");
       preencher_matriz();
       break;
     case 3:
@@ -254,6 +257,7 @@ int main() {
       break;
 
     case 4:
+      system("cls || clear");
       atualiza();
       break;
     case 5:
